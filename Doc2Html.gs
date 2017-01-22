@@ -55,7 +55,13 @@ function processItem(item, listCounters, images) {
       default: 
         prefix = "<p>", suffix = "</p>";
     }
-
+    
+    var positionedImages = item.getPositionedImages();
+    if (positionedImages.length != 0){ 
+      Logger.log ("POSITIONED IMAGES: " + positionedImages[0].getTopOffset() + " LEFT: " + positionedImages[0].getLeftOffset() + " TYPE: " + positionedImages[0].getLayout());     
+      //TODO: Find out if lines down = getTopOffset / fontsize
+    }
+    
     if (item.getNumChildren() == 0)
       return "";
   }
@@ -145,12 +151,19 @@ function processText(item, output) {
   var indices = item.getTextAttributeIndices();
 
   if (indices.length <= 1) {
-    // Assuming that a whole para fully italic is a quote
+    // Assuming that a whole para fully italic that starts with a quotation mark is a quotation
     if(item.isBold()) {
       output.push('<b>' + text + '</b>');
     }
     else if(item.isItalic()) {
-      output.push('<blockquote>' + text + '</blockquote>');
+      if (text.trim().charAt(0) == '“' || text.trim().charAt(0) == '"'){ //Accomodate for all the speech marks
+        //It's a quotation
+        output.push('<blockquote>' + text + '</blockquote>');
+      }
+      else
+      {
+        output.push('<i>' + text + '</i>');
+      }
     }
     else if(item.isUnderline()) {
       output.push('<u>' + text + '</u>')
