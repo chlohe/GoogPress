@@ -152,6 +152,9 @@ function processText(item, output) {
     else if(item.isItalic()) {
       output.push('<blockquote>' + text + '</blockquote>');
     }
+    else if(item.isUnderline()) {
+      output.push('<u>' + text + '</u>')
+    }
     else if (text.trim().indexOf('http://') == 0) {
       output.push('<a href="' + text + '" rel="nofollow">' + text + '</a>');
     }

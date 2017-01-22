@@ -1,5 +1,9 @@
+// Handling people that come snooping
+function doGet() {
+  return HtmlService.createHtmlOutputFromFile('Index');
+}
+
 //This is how we'll interface with the outside world
-  
 function doPost(e) {
   
   var requestType = e.parameters.type; 
