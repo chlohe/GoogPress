@@ -226,9 +226,12 @@ function processImage(item, images, output)
   var imageCounter = images.length;
   var name = imagePrefix + imageCounter + extension;
   imageCounter++;
-  output.push('<img src="cid:'+name+'" />');
-  images.push( {
-    "blob": blob,
-    "type": contentType,
-    "name": name});
+  //output.push('<img src="cid:'+name+'" />');
+  /*images.push( {
+  "blob": blob,
+  "type": contentType,
+  "name": name});*/
+  var base64 = Utilities.base64Encode(blob.getBytes());
+  output.push('<img src="data:image/'+extension.substring(1)+';base64,'+base64+'" style="width:'+ item.getWidth() +'px;height:' + item.getHeight() + 'px;"/>');
+
 }

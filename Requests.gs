@@ -1,6 +1,6 @@
 //This is how we'll interface with the outside world
   
-function doPost(e) {
+function doGet(e) {
   
   var requestType = e.parameters.type; 
   var id = e.parameters.id;
