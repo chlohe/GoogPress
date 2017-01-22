@@ -34,5 +34,5 @@ function gp_Init(url){
 }
 
 $(document).ajaxStop(function() {
-  $(".overlay").removeClass('slideInUp').addClass('slideOutDown');
+  $(".overlay").toggleClass('slideInUp slideOutDown');
 });
