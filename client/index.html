@@ -4,6 +4,7 @@
     <title>GoogPress Demo</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
     <link href="css/GoogPress.css" rel="stylesheet">
     <link href="css/spinner.css" rel="stylesheet">
 
@@ -18,27 +19,18 @@
         </div>
     </div>
     
-    <div class="overlay">
+    <div class="overlay animated slideInUp">
     
-        <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+        <svg class="spinner" width="40px" height="40px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
             <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30">
         </circle>
             
-        <h4>Building your blog...</h4>
+        <p>Rendering</p>
     </div>
     
 </svg>
     
     <div class="container" id="posts"> <!-- CSS will happen sometime -->
-        <div class="post">
-            <h3>POST TITLE</h3>
-            <h5>POST AUTHOR</h5>
-            
-            <div class="post-content">
-                Excellent content.
-            </div>
-        </div>
-        <hr />
         
         <div data-googpress="TestPost1"></div>
         <hr/>
@@ -49,10 +41,17 @@
         <div data-googpress="The Show Off"></div>
     </div>
     <script>
-        Init ("https://script.google.com/macros/s/AKfycbxunMflwCcd5lPoS1SEDTEIeIOjAuj9QnLon9czPFN5lfV2dtXt/exec");
+        Init ("https://script.google.com/macros/s/AKfycbxunMflwCcd5lPoS1SEDTEIeIOjAuj9QnLon9czPFN5lfV2dtXt/dev");
     </script>
     
-    <footer>Powered by GoogPress &copy; 2017</footer>
+    <footer>
+        <a href="#">About</a> &bull; <a href="#" onclick="Init ('https://script.google.com/macros/s/AKfycbxunMflwCcd5lPoS1SEDTEIeIOjAuj9QnLon9czPFN5lfV2dtXt/dev');">Rebuild Page</a>
+        
+        <br />
+        
+        Powered by GoogPress &copy; 2017
+    
+    </footer>
 
 </body>
 

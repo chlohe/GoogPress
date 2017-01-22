@@ -17,6 +17,8 @@ function loadPost (name, container){
 //Initialise Everything
 function Init(url){
 
+    $(".overlay").fadeIn();
+    
     hostUrl = url;
     
     //Find everything that want's to be googpress-ed
@@ -32,5 +34,5 @@ function Init(url){
 }
 
 $(document).ajaxStop(function() {
-  $(".overlay").fadeOut();
+  $(".overlay").removeClass('slideInUp').addClass('slideOutDown');
 });
