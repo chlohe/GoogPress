@@ -24,7 +24,7 @@ function doPost(e) {
 
       id = decodeURIComponent(id);
       
-      var doc = openDoc(id.toString());
+      var doc = openDoc(id.toString(), "Posts");
       Logger.log(doc);
       if (doc == "Not Found"){
         return ContentService.createTextOutput("Resource Not Found. Remember: this stuff is case sensitive!"); 
@@ -38,7 +38,7 @@ function doPost(e) {
       else
       {
         //Return plaintext
-         result = openDoc(doc).getBody().getText(); 
+         result = openDoc(doc, "Posts").getBody().getText(); 
       }
       
     }

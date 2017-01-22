@@ -1,6 +1,6 @@
-function openSheet(sheetName) {
+function openSheet(sheetName, containerFolder) {
   
-  var file, files = DriveApp.getFilesByName(sheetName); 
+  var file, files = (containerFolder == undefined) ? DriveApp.getFilesByName(sheetName) : openFolder(containerFolder).getFilesByName(sheetName); 
   
   if (files.hasNext ()){
     file = files.next(); 
@@ -12,9 +12,9 @@ function openSheet(sheetName) {
   
 }
 
-function openDoc(sheetName) {
+function openDoc(docName, containerFolder) { //Find docName in containerFolder. 
   
-  var file, files = DriveApp.getFilesByName(sheetName); 
+  var file, files = (containerFolder == undefined) ? DriveApp.getFilesByName(docName) : openFolder(containerFolder).getFilesByName(docName); 
   
   if (files.hasNext ()){
     file = files.next(); 
@@ -26,8 +26,24 @@ function openDoc(sheetName) {
   
 }
 
+function openFolder (fileName){
+
+  var folder, folders = DriveApp.getFoldersByName(fileName);
+ 
+  if (folders.hasNext()) {
+    folder = folders.next();
+  } else {
+    //If it doesn't exist then make it
+    folder = DriveApp.createFolder(fileName);
+  } 
+  
+  return folder;
+  
+}
+
 function clearLogs (){
 
   Logger.clear();
   
 }
+
