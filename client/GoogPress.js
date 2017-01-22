@@ -12,7 +12,6 @@ function loadPost (name, container){
             //set the container html
             container.html(data);
         });
-
 }
 
 //Initialise Everything
