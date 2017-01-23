@@ -9,6 +9,8 @@ function doPost(e) {
   var requestType = e.parameters.type; 
   var id = e.parameters.id;
   var asHtml = e.parameters.asHtml;
+  var start = e.parameters.start;
+  var end = e.parameters.end;
   
   var result = "";
   
@@ -45,6 +47,46 @@ function doPost(e) {
     else
     {
      result = "Missing id/asHtml parameters"; 
+    }
+    
+  }
+  else if (requestType.toString().tidy() == "post"){
+    
+    if (asHtml != undefined){
+      
+      var files = getDocFilesInFolderByDate("Posts");
+      
+      if (start != undefined && end != undefined)
+      {
+        //Posts start at 1 (NOT 0)
+        start -= 1;
+        end -= 1;
+        
+        if (end > files.length){
+         return "Out of bounds"; 
+        }
+        
+        //Return the stuff of interest
+        files = files.slice(start, (end - start + 1));
+      }
+
+      var docContent = []; //Where our posts are stored
+      
+      //Get the posts
+      if (asHtml.toString().tidy() == "true"){
+        for (var i = 0; i < files.length; i++){        
+          docContent.push(DocToHtml(DocumentApp.openById(files[i].getId()))); 
+        }
+      }
+      else
+      {
+        for (var i = 0; i < files.length; i++){        
+          docContent.push(DocumentApp.openById(files[i].getId()).getBody().getText()); 
+        }
+      }
+      
+      result = JSON.stringify(docContent);
+      
     }
     
   }
