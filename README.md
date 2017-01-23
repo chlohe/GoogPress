@@ -34,7 +34,7 @@ It's like WordPress but on Google.
 3) Initalise GoogPress with your Apps Script URL (again, we'll probably make an installer)
 ```
 <script>
-Init ("https://your-script-url-here");
+gp_Init ("https://your-script-url-here");
 </script>
 ```
 
@@ -45,5 +45,3 @@ Init ("https://your-script-url-here");
 
 5) Deploy and enjoy!
 
-### Heads up
-You might want to create a new Google account specifically for this - it'll only take a few seconds and save you a lot of bother.
