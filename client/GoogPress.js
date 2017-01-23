@@ -1,6 +1,6 @@
 var hostUrl = "";
 
-function loadPost (name, container){
+function gp_loadPost (name, container){
 
     $.post(
         hostUrl,
@@ -15,7 +15,7 @@ function loadPost (name, container){
 }
 
 //Initialise Everything
-function Init(url){
+function gp_Init(url){
 
     $(".overlay").fadeIn();
     
@@ -28,7 +28,7 @@ function Init(url){
 
     //googpress them
     containers.each(function () {
-        loadPost ($(this).data("googpress"), $(this));
+        gp_loadPost ($(this).data("googpress"), $(this));
     });
     
 }
