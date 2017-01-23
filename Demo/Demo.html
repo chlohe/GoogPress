@@ -13,8 +13,16 @@
         <h1> Look! Another! </h1><br/>
         <div data-googpress="TestPost2"></div>
     </div>
+    <hr/>
+    <div  id="posts">
+        <hr/>
+        <h1> Here are some posts loaded using loadPosts() </h1>
+        <br/>
+    </div>
+
     <script>
-        Init ("https://script.google.com/macros/s/AKfycbxunMflwCcd5lPoS1SEDTEIeIOjAuj9QnLon9czPFN5lfV2dtXt/exec");
+        gp_Init ("https://script.google.com/macros/s/AKfycbxunMflwCcd5lPoS1SEDTEIeIOjAuj9QnLon9czPFN5lfV2dtXt/exec");
+        gp_loadPosts(1,3,$('#posts'),"containerClass");
     </script>
 
 </body>

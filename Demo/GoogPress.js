@@ -1,6 +1,6 @@
 var hostUrl = "";
 
-function loadPost (name, container){
+function gp_loadPost (name, container){
 
     $.post(
         hostUrl,
@@ -12,12 +12,42 @@ function loadPost (name, container){
             //set the container html
             container.html(data);
         });
+}
+
+
+
+function gp_loadPosts(startIndex, endIndex, container, postDivClass){
+
+    $.post(
+        hostUrl,
+        {type : "post",
+         start : startIndex,
+         end : endIndex,
+         asHtml : true
+        },
+        function(data) {
+           
+            if (data == "Out of bounds")
+            {
+                console.warn("The posts you requested do not exist - out of bounds");
+                return;
+            }
+
+            var parsed = JSON.parse(data); 
+            
+            parsed.forEach(function (post){
+                container.append($('<div class="' + postDivClass + '">' + post + '</div>'))
+            });
+
+        });
 
 }
 
 //Initialise Everything
-function Init(url){
+function gp_Init(url){
 
+    $(".overlay").fadeIn();
+    
     hostUrl = url;
     
     //Find everything that want's to be googpress-ed
@@ -27,8 +57,13 @@ function Init(url){
 
     //googpress them
     containers.each(function () {
-        loadPost ($(this).data("googpress"), $(this));
+        gp_loadPost ($(this).data("googpress"), $(this));
     });
+    
 
 
 }
+
+$(document).ajaxStop(function() {
+  $(".overlay").removeClass('slideInUp').addClass('slideOutDown');
+});

@@ -14,6 +14,35 @@ function gp_loadPost (name, container){
         });
 }
 
+
+
+function gp_loadPosts(startIndex, endIndex, container, postDivClass){
+
+    $.post(
+        hostUrl,
+        {type : "post",
+         start : startIndex,
+         end : endIndex,
+         asHtml : true
+        },
+        function(data) {
+           
+            if (data == "Out of bounds")
+            {
+                console.warn("The posts you requested do not exist - out of bounds");
+                return;
+            }
+
+            var parsed = JSON.parse(data); 
+            
+            parsed.forEach(function (post){
+                container.append($('<div class="' + postDivClass + '">' + post + '</div>'))
+            });
+
+        });
+
+}
+
 //Initialise Everything
 function gp_Init(url){
 
@@ -31,6 +60,8 @@ function gp_Init(url){
         gp_loadPost ($(this).data("googpress"), $(this));
     });
     
+
+
 }
 
 $(document).ajaxStop(function() {
