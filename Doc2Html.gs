@@ -183,6 +183,10 @@ function processText(item, output) {
       var startPos = indices[i];
       var endPos = i+1 < indices.length ? indices[i+1]: text.length;
       var partText = text.substring(startPos, endPos);
+      
+      if (partAtts.FOREGROUND_COLOR) {
+        output.push('<font color="' + partAtts.FOREGROUND_COLOR + '">');
+      }
 
       if (partAtts.ITALIC) {
         output.push('<i>');
@@ -210,6 +214,11 @@ function processText(item, output) {
       }
       else {
         output.push(partText);
+      }
+      
+      // Begin closing tags (preserve order from above
+      if (partAtts.FOREGROUND_COLOR) {
+        output.push('</font>');
       }
 
       if (partAtts.ITALIC) {
