@@ -13,13 +13,13 @@ It's like WordPress but on Google.
 *Take a moment to realise how unfinished this project is. Now take a moment to realise how improved it will be in a month or two. Now reconsider your decision to try and get it working by yourself.*
 
 ### Drive-Side
-1) Create a folder for your site on Google Drive (this will be our "base" folder).
+1) Using the [official installer](https://script.google.com/a/macros/tiffin.kingston.sch.uk/s/AKfycbzMTWqlvd5L7GK5mYvi0m0w9G1nZrluarAehNfHlc021HyxoaVu/exec), install GoogPress onto your Google Drive (takes approx. 2 minutes tops).
 
-2) Copy the script over into said folder (we'll probably write an installer so sit tight).
+2) Once the installation is complete, follow the 'next steps' instructions on screen and then navigate back to Google Drive.
 
-3) Create a folder called "Posts" in the base folder.
+3) There you should find a newly-created folder called 'GoogPress' and within it another folder called 'Posts'.
 
-4) Create some Google Docs in the base folder (these will be your posts). Drag them into "Posts" when they're ready to publish!
+4) Drag Google Docs into the aforementioned 'Posts' folder to publish them. 
 
 ![Like this](http://i.imgur.com/DjSJATa.png)
 
