@@ -11,7 +11,7 @@ $("#failed").hide();
 
 $("#submit").click(function(){
   if (validateEmail ($("#email").val())){
-     //google.script.run.withSuccessHandler(done).Install($('#email').val().trim());
+     google.script.run.withSuccessHandler(done).Install($('#email').val().trim());
      $("#start").hide();
      $("#loader").fadeIn("fast");
   }
