@@ -31,7 +31,7 @@ It's like WordPress but on Google.
 <script type="text/javascript" src="GoogPress.js"> </script>
 ```
 
-3) Initalise GoogPress with your Apps Script URL (again, we'll probably make an installer)
+3) Initalise GoogPress with your Apps Script URL
 ```
 <script>
 gp_Init ("https://your-script-url-here");
