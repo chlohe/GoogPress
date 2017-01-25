@@ -18,7 +18,7 @@ function Install(email){
   
   if (shareResponse == "sharing success"){
     var creationResult = CreateGoogpress();
-    if (creationResult == "success"){
+    if (creationResult == "success" || creationResult == "success without document"){
       
       var data = {
         'email' : email,
@@ -34,7 +34,7 @@ function Install(email){
       //Delete the shared folder to stop it clogging up our side
       var deleteResponse =  UrlFetchApp.fetch('https://script.google.com/macros/s/AKfycbzpb_GIzkEDmjjuh17hVMQYLiZCpCPHSOAsfsirEYsCWaEz9jT2/exec', options);
       if (deleteResponse == "deleting success"){
-        return "success";
+        return (creationResult == "success without document") ? "success without document" : "success";
       }
     }
   }
@@ -68,15 +68,25 @@ function CreateGoogpress(){
       //But we aren't the owner so we copy it once more.
       var myFile = file.makeCopy("GoogPress");      
       
-      //Create a sample post
-      var sample = DocumentApp.create("Hello World");
-      var body = sample.getBody();
-      body.appendParagraph("HI WORLD!");
-      var id = sample.getId();
-      var sampleFile = DriveApp.getFileById(id);
-      posts.addFile(sampleFile);
-      DriveApp.removeFile(sampleFile);
-
+      try {
+        
+        //Create a sample post
+        var sample = DocumentApp.create("Hello World");
+        var body = sample.getBody();
+        body.appendParagraph("HI WORLD!");
+        var id = sample.getId();
+        var sampleFile = DriveApp.getFileById(id);
+        posts.addFile(sampleFile);
+        DriveApp.removeFile(sampleFile);
+        
+      }
+      
+      catch (e) {
+        
+        return "success without document";
+        
+      }
+      
       return "success";
     }
     
