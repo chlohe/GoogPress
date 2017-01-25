@@ -2,19 +2,88 @@
 <html>
   <head>
     <base target="_top">
-    <script
-    src="https://code.jquery.com/jquery-3.1.1.min.js"
-    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-    crossorigin="anonymous"></script>
+    <?!= include('installer.css'); ?>
   </head>
   <body>
-    <input id="email" />
-    <button onclick="google.script.run.withSuccessHandler(done).Install($('#email').val().trim())"> Install </button>
-    <script>
-    function done(e){
-       alert (e);
-    }
-    </script>
+<div id="particles-background" class="vertical-centered-box"></div>
+<div id="particles-foreground" class="vertical-centered-box"></div>
+
+  
+    <div class="wrapper" id="start">
+      <section class="container">
+        <h1> Hi. </h1>
+        <p> Thanks for installing GoogPress.</p>
+        
+        <p> First click the below button to agree that you won't use GoogPress to do anything <a target="_blank" href="http://criminal.findlaw.com/criminal-charges/view-all-criminal-charges.html"> stupid</a>. </p>
+        <button id="agree"> I agree </button>
+        <br/> <br/>
+        <div id="install">
+        <p> Please enter the email of the <b> Google </b> account you want to install GoogPress on (we aren't clever / snoopery enough to detect it). </p>
+        
+        <input type="email" id="email" placeholder="Your Google Email"/>
+        <button id="submit"> Install </button><span id="hint"></span>
+          
+        </div>
+      </section>
+      
+    </div>
+    
+    <div id="loader">  
+      <div class="vertical-centered-box">
+      <div class="content">
+      <h5 id="footer"> Installing GoogPress...  </h5>
+      <div class="loader-circle"></div>
+      <div class="loader-line-mask">
+        <div class="loader-line"></div>
+      </div>
+    </div>
+    </div>
+    
+    </div>
+    
+    
+    <div class="wrapper" id="nextsteps">
+      <section class="container">
+        <h1> Hoorah! </h1>
+        <p> The installation was successful.</p>
+        
+        <h2>Next Steps </h2>
+        
+        <h3> On Google Docs... </h3>
+        
+        <p> 1) Log into Google Drive and find your new GoogPress folder. This is where everything lives. Inside there should be a file called 'GoogPress' and a folder called 'Posts'. Open up 'GoogPress' (it might ask you if you want to use a 3rd party app - choose 'Google Apps Script').</p>
+        <img src="http://i.imgur.com/VcukwPm.png"/><br/><br/>
+        <p> 2) It should open in something vaguely remniscient of a text editor. Find the menu bar and navigate to 'Publish > Deploy as web app'. </p>
+        <img src="http://i.imgur.com/JKWl4YR.png"/><br/><br/>
+        <p> 3) Make sure the app is set to execute as 'Me' and that 'Anyone, even anonymous' can access the app (this is so that we can send it requests). </p>
+        <img src="http://i.imgur.com/p690VE7.png"/><br/><br/>
+        <p> 4) Hit deploy, grant it the necessary permissions and then copy the web app URL. </p>
+        <img src="http://i.imgur.com/IfTA41m.png"/><br/><br/>
+        <p> 5) You can now add posts to your GoogPress blog by dragging them into the posts folder on Drive (see the first picture - it's that). </p>
+
+
+        <h3> On Your Website/Blog </h3>
+        <p> Check out this <a href="https://github.com/PeterTheHe/GoogPress/blob/master/README.md" target="_blank"> link </a> to our official documentation - it should get you started <em> at speed </em>. </p>
+
+      </section>
+      
+    </div>
+    
+      <div class="wrapper" id="failed">
+      <section class="container">
+        <h1> Grr </h1>
+        <p> Something went wrong. </p>
+        <br/>
+        <p> Please try again and email us if the problem persists - contrary to popular belief, we actually <em><b> do </b></em> care. </p>
+
+      </section>
+      
+    </div>
+    
+
+    
+    
+    <?!= include('installer.js'); ?>
   </body>
 </html>
 

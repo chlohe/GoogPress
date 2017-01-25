@@ -1,5 +1,5 @@
 function doGet() {
-  return HtmlService.createHtmlOutputFromFile("InstallerUI").setTitle("GoogPress Installer");
+  return HtmlService.createTemplateFromFile("InstallerUI").evaluate().setTitle("GoogPress Installer");
 }
 
 function Install(email){
