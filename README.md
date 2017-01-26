@@ -65,9 +65,11 @@ What's my Apps Script URL?
 ![Like this](http://i.imgur.com/JKWl4YR.png)
 
 *Publish your app making sure that it's accessible to everyone, even anonymous*
+
 ![Like this](http://i.imgur.com/p690VE7.png)
 
 *Copy the URL it gives you. It should look something like 'https://script.google.com/macros/s/xxxxxxxxxxxxxx'*
+
 ![Like this](http://i.imgur.com/IfTA41m.png)
 
 
