@@ -26,7 +26,7 @@ It's like WordPress but on Google.
 ### Client-Side
 1) Make some HTML.
 
-2) Reference the GoogPress.js
+2) Reference GoogPress.js
 ```
 <script type="text/javascript" src="GoogPress.js"> </script>
 ```
