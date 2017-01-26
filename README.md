@@ -3,7 +3,6 @@ It's like WordPress but on Google.
 
 [View demo](http://googpress.twistedcore.co.uk)
 
-
 ## Features
 
 + Host a blog using nothing more than Google Docs
@@ -26,22 +25,69 @@ It's like WordPress but on Google.
 ### Client-Side
 1) Make some HTML.
 
-2) Reference GoogPress.js
+2) Reference JQuery
+
+```
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+```
+
+3) Reference GoogPress.js
 ```
 <script type="text/javascript" src="GoogPress.js"> </script>
 ```
 
-3) Initalise GoogPress with your Apps Script URL
+4) Initalise GoogPress with your Apps Script URL
 ```
 <script>
 gp_Init ("https://your-script-url-here");
 </script>
 ```
 
-4) Create some ``` <div> ``` elements and set their ```data-googpress``` attribute to the name of the Google Doc containing your post.
+5) Create some ``` <div> ``` elements and set their ```data-googpress``` attribute to the name of the Google Doc containing your post.
 ```
 <div data-googlepress="your-post-here"></div>
 ```
 
-5) Deploy and enjoy!
+6) Deploy and enjoy!
+
+## In Depth
+
+Here are the things you can do with GoogPress.js:
+
+### Loading Multiple Posts:
+
+```function gp_loadPosts(container, postDivClass, terminator, startIndex, endIndex)```
+
+```container``` The div containing all the posts
+```postDivClass``` Any classes that need to be added to the posts
+```terminator``` Any code you want between posts (eg. ```<hr/>```)
+```startIndex``` Where the posts start. 1 = latest post, 2 = second latest post...
+```endIndex``` Where the posts end.
+
+##### Example:
+``` 
+//Load the 3 most recent posts
+gp_loadPosts($("#post-container"),"postClass", "<hr/>", 1, 3);
+```
+##### Results in something like:
+``` 
+<div id="post-container">
+    <div class="postClass">
+        I am the latest post
+    </div>
+    <hr/>
+    <div class="postClass">
+        I am not the latest post
+    </div>
+    <hr/>
+    <div class="postClass">
+        I am also not the latest post
+    </div>
+    <hr/>
+</div>
+```
+
 
