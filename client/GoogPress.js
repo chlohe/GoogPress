@@ -16,7 +16,7 @@ function gp_loadPost (name, container){
 
 
 
-function gp_loadPosts(container, postDivClass, startIndex, endIndex){
+function gp_loadPosts(container, postDivClass, terminator, startIndex, endIndex){
 
     $.post(
         hostUrl,
@@ -36,7 +36,7 @@ function gp_loadPosts(container, postDivClass, startIndex, endIndex){
             var parsed = JSON.parse(data); 
             
             parsed.forEach(function (post){
-                container.append($('<div class="' + postDivClass + '">' + post + '</div>'))
+                container.append($('<div class="' + postDivClass + '">' + post + '</div>' + terminator))
             });
 
         });
