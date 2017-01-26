@@ -156,7 +156,7 @@ function processText(item, output) {
   var indices = item.getTextAttributeIndices();
 
   
-  if (indices.length <= 1) {
+  if (indices.length <= 1) {    
     // Assuming that a whole para fully italic that starts with a quotation mark is a quotation
     if(item.isBold()) {
       output.push('<b>' + text + '</b>');
@@ -172,10 +172,23 @@ function processText(item, output) {
       }
     }
     else if(item.isUnderline()) {
-      output.push('<u>' + text + '</u>')
+      //bc links are usually underlined
+      if (item.getLinkUrl() != undefined){ 
+        output.push('<a href="' + item.getLinkUrl() + '">' + text + "</a>");
+      }
+      else
+      {
+        output.push('<u>' + text + '</u>');
+      }
     }
     else if (text.trim().indexOf('http://') == 0) {
       output.push('<a href="' + text + '" rel="nofollow">' + text + '</a>');
+    }
+    else if (text.trim().indexOf('http://') == 0) {
+      output.push('<a href="' + text + '" rel="nofollow">' + text + '</a>');
+    }
+    else if (item.getForegroundColor() != undefined){
+      output.push('<font color="' +item.getForegroundColor() + '">' + text + "</font>");
     }
     else {
       output.push(text);
