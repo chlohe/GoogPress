@@ -53,6 +53,25 @@ It's like WordPress but on Google.
 
 6) Deploy and enjoy!
 
+### Frequently Asked Questions
+What's my Apps Script URL?
+
+*You can get your Apps Script URL by opening your Google Drive and navigating to the GoogPress folder. There you should find a file called 'GoogPress'.*
+
+![Like this](http://i.imgur.com/VcukwPm.png)
+
+*Open it up (if it prompts you to use a third party application, pick 'Google Apps Script') and on the menu navigate to Publish > Deploy as Web App*
+
+![Like this](http://i.imgur.com/JKWl4YR.png)
+
+*Publish your app making sure that it's accessible to everyone, even anonymous*
+![Like this](http://i.imgur.com/p690VE7.png)
+
+*Copy the URL it gives you. It should look something like 'https://script.google.com/macros/s/xxxxxxxxxxxxxx'*
+![Like this](http://i.imgur.com/IfTA41m.png)
+
+
+
 ## In Depth
 
 Here are the things you can do with GoogPress.js:
@@ -73,7 +92,7 @@ This will initialise GoogPress and fill any divs with a ```data-googpress``` att
 <hr/>
 
 <script>
-    gp_Init ("https://script.google.com/macros/s/xxxxxxxxxxxxxx");
+    gp_Init ("https://your-script-url-here");
 </script>
 ```
 ##### Results in something like:
@@ -97,13 +116,13 @@ This will initialise GoogPress and fill any divs with a ```data-googpress``` att
 
 ##### Example:
 ```javascript
-//Load the post "Hi World"
+//Load the post 'Hi World'
 gp_loadPost ("Hi World", $("#post"));
 ```
 ##### Results in something like:
 ```html
 <div id="post">
-  Content of "Hi World"
+  Content of 'Hi World'
 </div>
 ```
 
@@ -118,7 +137,7 @@ gp_loadPost ("Hi World", $("#post"));
 
 ```terminator``` Any code you want between posts (eg. ```<hr/>```)
 
-** Optional: **
+Optional:
 
 ```startIndex``` Where the posts start. 1 = latest post, 2 = second latest post... 
 
@@ -148,3 +167,5 @@ gp_loadPosts($("#post-container"),"postClass", "<hr/>", 1, 3);
 ```
 
 
+## Contribute
+Yeah just send us a pull-request.
