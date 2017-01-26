@@ -27,7 +27,7 @@ It's like WordPress but on Google.
 
 2) Reference JQuery
 
-```
+```html
 <script
   src="https://code.jquery.com/jquery-3.1.1.min.js"
   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
@@ -35,19 +35,19 @@ It's like WordPress but on Google.
 ```
 
 3) Reference GoogPress.js
-```
+```html
 <script type="text/javascript" src="GoogPress.js"> </script>
 ```
 
 4) Initalise GoogPress with your Apps Script URL
-```
+```html
 <script>
-gp_Init ("https://your-script-url-here");
+  gp_Init ("https://your-script-url-here");
 </script>
 ```
 
 5) Create some ``` <div> ``` elements and set their ```data-googpress``` attribute to the name of the Google Doc containing your post.
-```
+```html
 <div data-googlepress="your-post-here"></div>
 ```
 
@@ -58,6 +58,24 @@ gp_Init ("https://your-script-url-here");
 Here are the things you can do with GoogPress.js:
 
 ### Loading Individual Posts:
+
+```function gp_loadPost (name, container)```
+
+```name``` The name of the post you want to retrieve. This should be the name of it's Google Doc.
+
+```container``` The div containing all the posts
+
+##### Example:
+```javascript
+//Load the 3 most recent posts
+gp_loadPost ("Hi World", $("#post"));
+```
+##### Results in something like:
+```html
+<div id="post">
+  Content of "Hi World"
+</div>
+```
 
 
 ### Loading Multiple Posts:
@@ -77,12 +95,12 @@ Here are the things you can do with GoogPress.js:
 ```endIndex``` Where the posts end.
 
 ##### Example:
-``` 
+```javascript
 //Load the 3 most recent posts
 gp_loadPosts($("#post-container"),"postClass", "<hr/>", 1, 3);
 ```
 ##### Results in something like:
-``` 
+```html
 <div id="post-container">
     <div class="postClass">
         I am the latest post
