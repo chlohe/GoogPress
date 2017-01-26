@@ -16,7 +16,7 @@ function gp_loadPost (name, container){
 
 
 
-function gp_loadPosts(startIndex, endIndex, container, postDivClass){
+function gp_loadPosts(container, postDivClass, startIndex, endIndex){
 
     $.post(
         hostUrl,
@@ -57,7 +57,7 @@ function gp_Init(url){
 
     //googpress them
     containers.each(function () {
-        gp_loadPost ($(this).data("googpress"), $(this));
+       gp_loadPost ($(this).data("googpress"), $(this));
     });
     
 
