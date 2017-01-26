@@ -1,4 +1,4 @@
-function DocToHtml(doc) {
+function DocToHtml(doc, type) {
   var body = doc.getBody();
   var numChildren = body.getNumChildren();
   var output = [];
@@ -13,17 +13,22 @@ function DocToHtml(doc) {
 
   var html = output.join('\r');
   //emailHtml(html, images);
-  //createDocumentForHtml(html, images);
+  if (type != undefined){
+    createDocumentForHtml(doc.getName(), html, images, type);
+  }
   return html;
 }
 
-function createDocumentForHtml(html, images) {
-  var name = "asdfasdf.html";
+function createDocumentForHtml(name, html, images, type) {
   var newDoc = DocumentApp.create(name);
   newDoc.getBody().setText(html);
-  for(var j=0; j < images.length; j++)
-    newDoc.getBody().appendImage(images[j].blob);
+  //for(var j=0; j < images.length; j++)
+    //newDoc.getBody().appendImage(images[j].blob);
   newDoc.saveAndClose();
+  var folder = openFolder (type + "Cache");
+  var docFile = DriveApp.getFileById(newDoc.getId());
+  folder.addFile (docFile);
+  DriveApp.removeFile(docFile);
 }
 
 function dumpAttributes(atts) {

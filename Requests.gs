@@ -27,6 +27,7 @@ function doPost(e) {
       id = decodeURIComponent(id);
       
       var doc = openDoc(id.toString(), "Posts");
+
       Logger.log(doc);
       if (doc == "Not Found"){
         return ContentService.createTextOutput("Resource Not Found. Remember: this stuff is case sensitive!"); 
