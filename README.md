@@ -57,6 +57,36 @@ It's like WordPress but on Google.
 
 Here are the things you can do with GoogPress.js:
 
+### Initialisation:
+
+This will initialise GoogPress and fill any divs with a ```data-googpress``` attribute with content.
+
+```function gp_Init(url)```
+
+```url``` The URL of the the web app.
+
+##### Example:
+```html
+<div data-googpress="post1"></div>
+<hr/>
+<div data-googpress="post2"></div>
+<hr/>
+
+<script>
+    gp_Init ("https://script.google.com/macros/s/xxxxxxxxxxxxxx");
+</script>
+```
+##### Results in something like:
+```html
+<div data-googpress="post1">
+    Content of post1
+</div>
+<hr/>
+<div data-googpress="post2"></div>
+    Content of post2
+<hr/>
+```
+
 ### Loading Individual Posts:
 
 ```function gp_loadPost (name, container)```
@@ -67,7 +97,7 @@ Here are the things you can do with GoogPress.js:
 
 ##### Example:
 ```javascript
-//Load the 3 most recent posts
+//Load the post "Hi World"
 gp_loadPost ("Hi World", $("#post"));
 ```
 ##### Results in something like:
