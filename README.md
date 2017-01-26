@@ -57,14 +57,23 @@ gp_Init ("https://your-script-url-here");
 
 Here are the things you can do with GoogPress.js:
 
+### Loading Individual Posts:
+
+
 ### Loading Multiple Posts:
 
 ```function gp_loadPosts(container, postDivClass, terminator, startIndex, endIndex)```
 
 ```container``` The div containing all the posts
+
 ```postDivClass``` Any classes that need to be added to the posts
+
 ```terminator``` Any code you want between posts (eg. ```<hr/>```)
-```startIndex``` Where the posts start. 1 = latest post, 2 = second latest post...
+
+** Optional: **
+
+```startIndex``` Where the posts start. 1 = latest post, 2 = second latest post... 
+
 ```endIndex``` Where the posts end.
 
 ##### Example:
