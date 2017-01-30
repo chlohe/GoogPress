@@ -36,7 +36,7 @@ It's like WordPress but on Google.
 
 3) Reference GoogPress.js
 ```html
-<script type="text/javascript" src="GoogPress.js"> </script>
+<script type="text/javascript" src="https://dl.twistedcore.co.uk/static/js/GoogPress.js"> </script>
 ```
 
 4) Initalise GoogPress with your Apps Script URL
