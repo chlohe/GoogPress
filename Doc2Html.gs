@@ -96,8 +96,6 @@ function processItem(item, listCounters, images) {
           || gt === DocumentApp.GlyphType.HOLLOW_BULLET
           || gt === DocumentApp.GlyphType.SQUARE_BULLET) {
         prefix = '<ul class="small"><li>', suffix = "</li>";
-
-          suffix += "</ul>";
         }
       else {
         // Ordered list (<ol>):
