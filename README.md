@@ -3,6 +3,10 @@ It's like WordPress but on Google.
 
 [View demo](http://googpress.twistedcore.co.uk) | [Installer](https://script.google.com/macros/s/AKfycbzMTWqlvd5L7GK5mYvi0m0w9G1nZrluarAehNfHlc021HyxoaVu/exec) | [GoogPress.js CDN](https://dl.twistedcore.co.uk/static/js/GoogPress.js)
 
+## Our Story
+
+Once upon a time there were two "developers", Peter and Stewart. They had just taken over the production team for the [Young Scientists' Journal](https://ysjournal.com/) and were tasked with "making the website great [work] again". After a survey of the site's contributors, it turned out that people don't like hardly-working XML-based editors (Wordpress Annotum). Thus, with the team being so broke that they couldn't really afford anything that costed money, GoogPresss was born. 
+
 ## Features
 
 + Host a blog using nothing more than Google Docs
