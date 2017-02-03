@@ -1,7 +1,7 @@
 # GoogPress
 It's like WordPress but on Google.
 
-[View demo](http://googpress.twistedcore.co.uk) | [Installer](https://script.google.com/macros/s/AKfycbzMTWqlvd5L7GK5mYvi0m0w9G1nZrluarAehNfHlc021HyxoaVu/exec) | [GoogPress.js CDN](https://dl.twistedcore.co.uk/static/js/GoogPress.js)
+[View demo](http://googpress.twistedcore.co.uk) | [Installer](https://script.google.com/macros/s/AKfycbzMTWqlvd5L7GK5mYvi0m0w9G1nZrluarAehNfHlc021HyxoaVu/exec) | [GoogPress.js CDN](https://cdn.googpress.org/0.1/GoogPress.min.js)
 
 ## Our Story
 
