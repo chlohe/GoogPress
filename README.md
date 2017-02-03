@@ -40,7 +40,7 @@ Once upon a time there were two "developers", Peter and Stewart. They had just t
 
 3) Reference GoogPress.js
 ```html
-<script type="text/javascript" src="https://dl.twistedcore.co.uk/static/js/GoogPress.js"> </script>
+<script type="text/javascript" src="https://cdn.googpress.org/0.1/GoogPress.min.js"> </script>
 ```
 
 4) Initalise GoogPress with your Apps Script URL
