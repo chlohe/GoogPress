@@ -1,5 +1,5 @@
 function doGet() {
-  return HtmlService.createTemplateFromFile("InstallerUI").evaluate().setTitle("GoogPress Installer");
+  return HtmlService.createTemplateFromFile("InstallerUI").evaluate().setTitle("GoogPress Installer").setFaviconUrl("https://googpress.org/images/favicon.ico");
 }
 
 function Install(email){
@@ -73,7 +73,7 @@ function CreateGoogpress(){
         //Create a sample post
         var sample = DocumentApp.create("Hello World");
         var body = sample.getBody();
-        body.appendParagraph("HI WORLD!");
+        body.appendParagraph("HI WORLD! This is a sample post.");
         var id = sample.getId();
         var sampleFile = DriveApp.getFileById(id);
         posts.addFile(sampleFile);
